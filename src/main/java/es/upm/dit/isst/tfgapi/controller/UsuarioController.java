@@ -67,13 +67,10 @@ public class UsuarioController {
 
         Usuario a = usuarioRepository.findByCorreo(correo);
 
-        if (a.getContraseña() == newUsuario.getContraseña()){
+        
             return ResponseEntity.ok().body(a);
-        }
+        
 
-        else{
-            return ResponseEntity.ok().body(a);
-        }
-
+       
    }
 }
