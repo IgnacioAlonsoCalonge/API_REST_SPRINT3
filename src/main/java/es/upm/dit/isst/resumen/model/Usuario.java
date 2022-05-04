@@ -1,4 +1,4 @@
-package es.upm.dit.isst.tfgapi.model;
+package es.upm.dit.isst.resumen.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
