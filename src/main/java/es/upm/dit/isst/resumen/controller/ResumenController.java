@@ -1,4 +1,4 @@
-package es.upm.dit.isst.tfgapi.controller;
+package es.upm.dit.isst.resumen.controller;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.upm.dit.isst.tfgapi.model.Resumen;
-import es.upm.dit.isst.tfgapi.repository.ResumenRepository;
+import es.upm.dit.isst.resumen.model.Resumen;
+import es.upm.dit.isst.resumen.repository.ResumenRepository;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -39,8 +39,8 @@ public class ResumenController {
  
     @GetMapping("/resumenes/{id}")
     ResponseEntity<Resumen> read(@PathVariable Long id){    
-         return resumenRepository.findById(id).map(tfg ->
-         ResponseEntity.ok().body(tfg)).orElse(new ResponseEntity<Resumen>(HttpStatus.NOT_FOUND));
+         return resumenRepository.findById(id).map(resumen ->
+         ResponseEntity.ok().body(resumen)).orElse(new ResponseEntity<Resumen>(HttpStatus.NOT_FOUND));
     }
 
     @DeleteMapping("resumenes/{id}")
@@ -70,7 +70,7 @@ public class ResumenController {
        headers.add("Pragma", "no-cache");
        headers.add("Expires", "0");
      
-       headers.setContentType(new MediaType("application", "force-download"));
+       headers.setContentType(new MediaType("application-pdf", "force-download"));
 
        return new ResponseEntity<ByteArrayResource>(resource, headers, HttpStatus.OK);
 
@@ -91,7 +91,7 @@ public class ResumenController {
        headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
        headers.add("Pragma", "no-cache");
        headers.add("Expires", "0");
-       headers.setContentType(new MediaType("application", "force-download"));
+       headers.setContentType(new MediaType("application-mp3", "force-download"));
 
        return new ResponseEntity<ByteArrayResource>(resource, headers, HttpStatus.OK);
     }

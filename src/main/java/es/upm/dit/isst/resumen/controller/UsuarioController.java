@@ -1,4 +1,4 @@
-package es.upm.dit.isst.tfgapi.controller;
+package es.upm.dit.isst.resumen.controller;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.upm.dit.isst.tfgapi.model.Usuario;
-import es.upm.dit.isst.tfgapi.repository.UsuarioRepository;
+import es.upm.dit.isst.resumen.model.Usuario;
+import es.upm.dit.isst.resumen.repository.UsuarioRepository;
 
 
 
